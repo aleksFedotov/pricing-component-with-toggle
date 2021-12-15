@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.5rem;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f6f6fe;
+  background-image: url(/images/bg-bottom.svg), url(./images/bg-top.svg);
+  background-repeat: no-repeat;
+  background-position: bottom left, top right;
+  padding: 0 2rem;
+}
+
+.heading--primary {
+  color: #6d708d;
+  margin-top: 8rem;
+  margin-bottom: 4rem;
+}
+.heading--secondary {
+  font-size: 1.8rem;
+}
+
+.btn {
+  width: 100%;
+  text-transform: uppercase;
+  font-family: inherit;
+  border-radius: 0.8rem;
+  padding: 1.5rem;
+  border: none;
+  cursor: pointer;
+}
+.btn:active {
+  transform: scale(0.98);
+}
+.btn--color {
+  background: linear-gradient(to right, #a3a8f0, #696fdd);
+  color: #fff;
+  border: 2px solid #a3a8f0;
+}
+.btn--color:hover {
+  background: #fff;
+  color: #a3a8f0;
+}
+.btn--white {
+  background-color: #fff;
+  color: #a3a8f0;
+  border: 2px solid #fff;
+}
+.btn--white:hover {
+  background: linear-gradient(to right, #a3a8f0, #696fdd);
+  color: #fff;
+}
+
+.toogle-box {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  color: #b3b5c6;
+}
+
+.toggle {
+  width: 5.6rem;
+  height: 3.2rem;
+  border-radius: 4rem;
+  background: linear-gradient(to right, #a3a8f0, #696fdd);
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.toggle:hover {
+  background: #b3b5c6;
+}
+.toggle.annually {
+  justify-content: flex-start;
+}
+.toggle-ball {
+  width: 2.6rem;
+  height: 2.6rem;
+  background-color: #fff;
+  border-radius: 50%;
+  margin: 0 4px;
+}
+
+.container {
+  margin-top: 6.5rem;
+  display: flex;
+  align-items: center;
+  max-width: 105rem;
+  width: 100%;
+}
+
+.card {
+  border-radius: 1rem;
+  flex: 1;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 3rem;
+}
+.card--white {
+  background-color: #fff;
+  min-height: 45rem;
+  color: #6d708d;
+}
+.card--color {
+  background: linear-gradient(to right, #a3a8f0, #696fdd);
+  min-height: 50rem;
+  color: #fff;
+}
+.card--color .card__price-box .card__price {
+  color: #fff;
+}
+.card__box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.card__price-box .card__price {
+  display: flex;
+  align-items: center;
+  font-size: 4rem;
+  gap: 0.8rem;
+  color: #494c5f;
+}
+.card__price-box .card__price-annually {
+  display: none;
+}
+.card__price-box .price {
+  font-size: 7rem;
+}
+.card__price-box.annually .card__price {
+  display: none;
+}
+.card__price-box.annually .card__price-annually {
+  display: flex;
+}
+.card__list {
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  list-style: none;
+  width: 100%;
+}
+.card__list li {
+  border-top: 1px solid #b3b5c6;
+  padding: 1.8rem 0;
+}
+.card__list li:last-of-type {
+  border-bottom: 1px solid #b3b5c6;
+}
+
+@media only screen and (max-width: 1050px) {
+  .container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .card {
+    max-width: 50rem;
+    width: 100%;
+  }
+  .card--color {
+    min-height: 45rem;
+  }
+}
+@media only screen and (max-width: 700px) {
+  body {
+    background-image: url(./images/bg-top.svg);
+  }
+}
+@media only screen and (max-width: 400px) {
+  body {
+    background-position: 19rem top;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

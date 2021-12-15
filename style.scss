@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+// colors
+
+$color-very-Light-Grayish-Blue: hsl(240, 78%, 98%);
+$color-light-Grayish-Blue: hsl(234, 14%, 74%);
+$color-grayish-Blue: hsl(233, 13%, 49%);
+$color-dark-Grayish-Blue: hsl(232, 13%, 33%);
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: $color-very-Light-Grayish-Blue;
+  background-image: url(/images/bg-bottom.svg), url(./images/bg-top.svg);
+  background-repeat: no-repeat;
+  background-position: bottom left, top right;
+  padding: 0 2rem;
+}
+
+.heading {
+  &--primary {
+    color: $color-grayish-Blue;
+    margin-top: 8rem;
+    margin-bottom: 4rem;
+  }
+
+  &--secondary {
+    font-size: 1.8rem;
+  }
+}
+
+.btn {
+  width: 100%;
+  text-transform: uppercase;
+  font-family: inherit;
+  border-radius: 0.8rem;
+  padding: 1.5rem;
+  border: none;
+  cursor: pointer;
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  &--color {
+    background: linear-gradient(
+      to right,
+      hsl(236, 72%, 79%),
+      hsl(237, 63%, 64%)
+    );
+    color: #fff;
+    border: 2px solid hsl(236, 72%, 79%);
+
+    &:hover {
+      background: #fff;
+      color: hsl(236, 72%, 79%);
+    }
+  }
+
+  &--white {
+    background-color: #fff;
+    color: hsl(236, 72%, 79%);
+    border: 2px solid #fff;
+
+    &:hover {
+      background: linear-gradient(
+        to right,
+        hsl(236, 72%, 79%),
+        hsl(237, 63%, 64%)
+      );
+      color: #fff;
+    }
+  }
+}
+
+.toogle-box {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+
+  color: $color-light-Grayish-Blue;
+}
+
+.toggle {
+  width: 5.6rem;
+  height: 3.2rem;
+  border-radius: 4rem;
+  background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  &:hover {
+    background: $color-light-Grayish-Blue;
+  }
+
+  &.annually {
+    justify-content: flex-start;
+  }
+
+  &-ball {
+    width: 2.6rem;
+    height: 2.6rem;
+    background-color: #fff;
+    border-radius: 50%;
+    margin: 0 4px;
+  }
+}
+
+.container {
+  margin-top: 6.5rem;
+  display: flex;
+  align-items: center;
+  max-width: 105rem;
+  width: 100%;
+}
+
+.card {
+  border-radius: 1rem;
+  flex: 1;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 3rem;
+
+  &--white {
+    background-color: #fff;
+    min-height: 45rem;
+    color: $color-grayish-Blue;
+  }
+
+  &--color {
+    background: linear-gradient(
+      to right,
+      hsl(236, 72%, 79%),
+      hsl(237, 63%, 64%)
+    );
+    min-height: 50rem;
+    color: #fff;
+
+    .card__price-box {
+      .card__price {
+        color: #fff;
+      }
+    }
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__price-box {
+    .card__price {
+      display: flex;
+      align-items: center;
+      font-size: 4rem;
+      gap: 0.8rem;
+      color: $color-dark-Grayish-Blue;
+    }
+    .card__price-annually {
+      display: none;
+    }
+
+    .price {
+      font-size: 7rem;
+    }
+
+    &.annually {
+      .card__price {
+        display: none;
+      }
+      .card__price-annually {
+        display: flex;
+      }
+    }
+  }
+
+  &__list {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    list-style: none;
+    width: 100%;
+    li {
+      border-top: 1px solid $color-light-Grayish-Blue;
+      padding: 1.8rem 0;
+
+      &:last-of-type {
+        border-bottom: 1px solid $color-light-Grayish-Blue;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1050px) {
+  .container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .card {
+    max-width: 50rem;
+    width: 100%;
+    &--color {
+      min-height: 45rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  body {
+    background-image: url(./images/bg-top.svg);
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  body {
+    background-position: 19rem top;
+  }
+}
